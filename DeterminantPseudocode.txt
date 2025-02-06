@@ -1,0 +1,16 @@
+
+def det(INPUT: A ∈ R^(n*n), n)
+
+if n is 2:
+    detA <- A[1,1]*A[2,2] - A[1,2]*A[2,1]
+    output: detA
+
+else if n > 2:
+    B <- A
+    detA <- 0
+    for k = 1 : n
+        B <- remove column 1 and row k
+        detA <- (-1)^(k+1) * A[k,1] * det(B) + detA
+    end for
+end if
+output: detA
